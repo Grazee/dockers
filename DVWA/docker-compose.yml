@@ -1,0 +1,7 @@
+version: "3"
+services:
+    dvwa:
+        image: vulnerables/web-dvwa
+        restart: always
+        ports:
+            - 127.0.0.1:8888:80
