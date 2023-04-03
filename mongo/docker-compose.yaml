@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo1
+    restart: always
+    command: --config /etc/mongo/mongod.conf
+    ports:
+      - 127.0.0.1:12714:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - ./db:/data/db
+      - ./log:/var/log/mongodb
+      - ./config:/etc/mongo
